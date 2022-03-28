@@ -12,4 +12,5 @@ foreach($arr as $key=>$value){
 echo "<hr>";
 // Decode JSON data to PHP object
 $obj = json_decode($json);
+echo "code added"
 ?>
