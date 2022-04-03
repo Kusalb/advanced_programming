@@ -7,8 +7,6 @@ $first_name = $last_name = $email = "";
 $first_name_err = $last_name_err = $email_err = "";
 // Processing form data when form is submitted
 if (isset($_POST["id"]) && !empty($_POST["id"])) {
-    echo "1";
-
 // Get hidden input value
     $id = $_POST["id"];
     $temp_name = $_FILES['image']['tmp_name'];
@@ -51,16 +49,12 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
 
 // Check input errors before inserting in database
     if (empty($first_name_err) && empty($last_name_err) && empty($email_err)) {
-        echo "2";
         // Prepare an update statement
         if ($filename == "") {
-            echo "3";
-
             $sql = "UPDATE persons SET first_name=?, last_name=?, email=? WHERE id=?";
             if ($stmt = mysqli_prepare($conn, $sql)) {
                 // Bind variables to the prepared statement as parameters
                 mysqli_stmt_bind_param($stmt, "sssi", $param_first_name, $param_last_name, $param_email, $param_id);
-                echo "4";
 
                 // Set parameters
                 $param_first_name = $first_name;
@@ -89,7 +83,6 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
         }
         // Attempt to execute the prepared statement
         if (mysqli_stmt_execute($stmt)) {
-            echo "7";
 
             // Records updated successfully. Redirect to landing page
             header("location: retrieve_to.php");
@@ -110,14 +103,11 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
     if (isset($_GET["id"]) && !empty(trim($_GET["id"]))) {
         // Get URL parameter
         $id = trim($_GET["id"]);
-        echo "8";
-
         // Prepare a select statement
         $sql = "SELECT * FROM persons WHERE id = ?";
         if ($stmt = mysqli_prepare($conn, $sql)) {
             // Bind variables to the prepared statement as parameters
             mysqli_stmt_bind_param($stmt, "i", $param_id);
-            echo "9";
 
             // Set parameters
             $param_id = $id;
@@ -125,7 +115,6 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
             // Attempt to execute the prepared statement
             if (mysqli_stmt_execute($stmt)) {
                 $result = mysqli_stmt_get_result($stmt);
-                echo "10";
 
                 if (mysqli_num_rows($result) == 1) {
                     /* Fetch result row as an associative array. Since the result set
@@ -139,7 +128,6 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
                     $image = $row["image"];
 
                 } else {
-                    echo "11";
 
                     // URL doesn't contain valid id. Redirect to error page
                     header("location: error.php");

@@ -16,9 +16,8 @@ if (isset($_POST["search_keyword"]) && isset($_POST["search_field"])) {
 }
 ?>
 
-<?php include "../header.php" ?>
-<link href="../assests/bootstrap.min.css" rel="stylesheet">
-
+<html>
+<head><title>Search</title></head>
 <a href="create.php">Create</a>
 <form action="search.php" method="post">
     <input type="text" name="search_keyword" required>
@@ -30,7 +29,7 @@ if (isset($_POST["search_keyword"]) && isset($_POST["search_field"])) {
     <input type="submit" value="Search">
     <a href="retrieve_to.php"><button>Clear</button></a>
 </form>
-<table class='table table-dark'>
+<table border="1">
     <tr>
         <th>id</th>
         <th>Image</th>
@@ -64,5 +63,4 @@ if (isset($_POST["search_keyword"]) && isset($_POST["search_field"])) {
     <?php } ?>
 
 </table>
-<?php include "../footer.php" ?>
-
+</html>

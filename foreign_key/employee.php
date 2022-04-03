@@ -21,8 +21,8 @@ if($stmt = mysqli_prepare($link, $sql)){
 
     // Set parameters
     $full_name = $_REQUEST['full_name'];
-    $role_id = $_REQUEST['role_id'];
-    $department_id = $_REQUEST['department_id'];
+    $role_id = $_REQUEST['role'];
+    $department_id = $_REQUEST['department'];
 
     // Attempt to execute the prepared statement
     if(mysqli_stmt_execute($stmt)){
@@ -45,17 +45,19 @@ mysqli_close($link);
 <html>
 <form action="" method="POST">
     <input type="text" name="full_name" placeholder="Enter Name">
-    <select name="role_id">
-        <?php foreach ($role as $r){?>
-            <option value="<?php echo $r["role_id"];?>"><?php echo $r["role"]?></option>
+
+    <select name="role">
+        <?php foreach ($role as $r) {?>
+        <option value=<?php echo $r['role_id'] ?>><?php echo $r['role'] ?></option>
         <?php } ?>
     </select>
-    <select name="department_id">
+    <select name="department">
         <option value=""></option>
-        <?php foreach ($department as $d){?>
-            <option value="<?php echo $d["department_id"];?>"><?php echo $d["department_name"]?></option>
+        <?php foreach ($department as $d) {?>
+            <option value=<?php echo $d['department_id'] ?>><?php echo $d['department_name'] ?></option>
         <?php } ?>
     </select>
+
     <input type="submit" value="Submit">
 </form>
 </html>

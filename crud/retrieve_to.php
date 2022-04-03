@@ -3,7 +3,6 @@ require_once "../config.php";
 $sql = "SELECT * FROM persons";
 $result=mysqli_query($conn,$sql)
 ?>
-<?php //include "../header.php"?>
 <html>
 <head><title>Retrieve</title></head>
 <body>
@@ -17,7 +16,7 @@ $result=mysqli_query($conn,$sql)
     </select>
     <input type="submit" value="Search">
 </form>
-<table border="1">
+<table>
 <tr>
     <th>id</th>
     <th>Image</th>
@@ -37,9 +36,7 @@ $result=mysqli_query($conn,$sql)
      <td><a href="update_details.php?id=<?php echo $row["id"]?>">Edit</a></td>
      <td><a href="delete_details.php? id=<?php echo $row["id"]?>">Delete</a> </td>
    </tr>
-
      <?php } ?>
  </table>
 </body>
 </html>
-<?php //include "../footer.php"?>
