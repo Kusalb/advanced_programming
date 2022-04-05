@@ -1,7 +1,7 @@
 <?php
 /* Attempt MySQL server connection. Assuming you are running MySQL
 server with default setting (user 'root' with no password) */
-$link = mysqli_connect("localhost", "root", "", "nilgiri");
+$link = mysqli_connect("localhost", "root", "", "mardi_key");
 
 // Check connection
 if($link === false){
@@ -47,15 +47,17 @@ mysqli_close($link);
     <input type="text" name="full_name" placeholder="Enter Name">
 
     <select name="role">
+        <option value=""></option>
         <?php foreach ($role as $r) {?>
-        <option value=<?php echo $r['role_id'] ?>><?php echo $r['role'] ?></option>
-        <?php } ?>
+            <option value="<?php echo $r['role_id']?>"><?php echo $r['role_name']?>
+        <?php }?>
+        </option>
     </select>
     <select name="department">
         <option value=""></option>
         <?php foreach ($department as $d) {?>
-            <option value=<?php echo $d['department_id'] ?>><?php echo $d['department_name'] ?></option>
-        <?php } ?>
+        <option value="<?php echo $d['department_id']?>"><?php echo $d['department_name']?>
+            <?php }?>
     </select>
 
     <input type="submit" value="Submit">

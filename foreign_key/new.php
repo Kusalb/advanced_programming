@@ -8,12 +8,12 @@ if($_SERVER["REQUEST_METHOD"]== "POST")
 <html>
 <body>
 <form action="" method="POST">
-    <label for="cars">Choose a car:</label>
+    <label for="cars">Choose a gender:</label>
 
     <select name="cars">
-            <option value="0">Volvo</option>
-            <option value="1">Bogate</option>
-            <option value="2">Chaprigini</option>
+            <option value="M">Male</option>
+            <option value="F">Female</option>
+            <option value="O">Other</option>
     </select>
     <br><br>
     <input type="submit" value="Submit">
