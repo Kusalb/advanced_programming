@@ -62,19 +62,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
 
 
 }
-
-
 ?>
 
-<!--<!doctype html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-<!--    <meta charset="utf-8">-->
-<!--    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
-<!--    <title>PHP login system!</title>-->
-<!--</head>-->
-<!--<body>-->
-<!---->
+
 <!--   <h1>Php Login System</h1>-->
 <!--    <a href="register.php">Register</a>-->
 <!--    <a href="login.php">Login</a>-->
@@ -93,26 +83,32 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
 <!--    </form>-->
 <!---->
 <!--</div>-->
-<!--</body>-->
-<!--</html>-->
-<!---->
+<?php include "../registration/header.php"?>
+   <main class="form-signin">
+       <form action="login.php" method="post">
+<!--           <img class="mb-4" src="/docs/5.1/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">-->
+           <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
-<?php include "../header.php"?>
+           <div class="form-floating">
+               <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="username">
+               <label for="floatingInput">Email address</label>
+           </div>
+           <div class="form-floating">
+               <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password">
+               <label for="floatingPassword">Password</label>
+           </div>
 
-  <body class="text-center">
-    <form class="form-signin">
-      <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-      <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-      <label for="inputEmail" class="sr-only">Email address</label>
-      <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-      <label for="inputPassword" class="sr-only">Password</label>
-      <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-      <div class="checkbox mb-3">
-        <label>
-          <input type="checkbox" value="remember-me"> Remember me
-        </label>
-      </div>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-      <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
-    </form>
-  <?php require "../footer.php"?>
+           <div class="checkbox mb-3">
+               <label>
+                   <input type="checkbox" value="remember-me"> Remember me
+               </label>
+           </div>
+           <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+           <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
+       </form>
+   </main>
+
+</body>
+</html>
+
+

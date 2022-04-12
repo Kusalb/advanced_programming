@@ -16,20 +16,8 @@ if (isset($_POST["search_keyword"]) && isset($_POST["search_field"])) {
 }
 ?>
 
-<html>
-<head><title>Search</title></head>
-<a href="create.php">Create</a>
-<form action="search.php" method="post">
-    <input type="text" name="search_keyword" required>
-    <select name="search_field" required>
-        <option value="first_name" selected>First Name</option>
-        <option value="last_name">Last Name</option>
-        <option value="email">Email</option>
-    </select>
-    <input type="submit" value="Search">
-    <a href="retrieve_to.php"><button>Clear</button></a>
-</form>
-<table border="1">
+<?php require 'header.php'?>
+<table class="table table-success table-striped">
     <tr>
         <th>id</th>
         <th>Image</th>

@@ -151,21 +151,18 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
     }
 }
 ?>
-<html>
-<head>
-    <title>Edit Data</title>
-</head>
-<body>
-<a href="retrieve_to.php">Home</a>
+<?php include "header.php"?>
 <br><br>
+    <div class="container">
+        <h1>Edit page</h1>
 <form method="post" action="" enctype="multipart/form-data">
-    <input type="text" name="first_name" value="<?php echo $first_name; ?>"<br><br>
-    <input type="text" name="last_name" value="<?php echo $last_name; ?>"<br><br>
-    <input type="email" name="email" value="<?php echo $email; ?>" <br><br>
-    <input type="file" name="image"><br><br><?php echo $image; ?><br>
+    <input type="text" class="form-control" name="first_name" value="<?php echo $first_name; ?>"<br><br>
+    <input type="text" class="form-control" name="last_name" value="<?php echo $last_name; ?>"<br><br>
+    <input type="email" class="form-control" name="email" value="<?php echo $email; ?>" <br><br>
+    <input type="file" class="form-control" name="image"><br><br><?php echo $image; ?><br>
     <input type="hidden" name="id" value="<?php echo $id; ?>"/>
-    <input type="submit" value="update">
+    <input type="submit" class="btn btn-primary" value="Update">
 </form>
-
+</div>
 </body>
 </html>

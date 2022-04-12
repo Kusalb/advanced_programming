@@ -86,17 +86,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
-<html>
-<head><title>Create</title></head>
+<?php include "header.php" ?>
+
+
 <div class="container mt-3">
     <h2>Create page</h2>
+    <div class="row">
     <form action="create.php" method="post" enctype="multipart/form-data">
-            <input type="file" id="image" name="image"><br>
-            <input type="text" id="first_name" placeholder="Enter First name" name="first_name"><br>
-            <input type="text" id="last_name" placeholder="Enter last name" name="last_name"><br>
-         <input type="email" id="email" placeholder="Enter email" name="email"><br>
+            <input type="file" id="image" name="image" class="form-control"><br>
+            <input type="text" id="first_name" placeholder="Enter First name" name="first_name" class="form-control"><br>
+            <input type="text" id="last_name" placeholder="Enter last name" name="last_name" class="form-control"><br>
+         <input type="email" id="email" placeholder="Enter email" name="email" class="form-control"><br>
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
     </form>
+
 </div>
-</html>
+<?php include "footer.php"?>
